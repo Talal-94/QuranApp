@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Counter from './Component/Counter';
+import Table from './Component/Table';
 
-function App() {
+function App () 
+{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* COUNTER */}
+    <Counter/>
+    <br/>
+    <br/>
+   <Counter init = { 3 } value = { 1 }/>
+   <br/>
+   <br/>
+   <Counter init = { 10 } value = { 5 }/>
+   <br/>
+   <br/>
+   <Counter init = { 50 } value = { 10 }/>
+   {/* TABLE */}
+   <br/>
+   <br/>
+   <hr/>
+   <Table />
+    </>
   );
 }
 
