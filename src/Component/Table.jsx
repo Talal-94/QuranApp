@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
  
   function Table( ) 
   {
@@ -16,7 +15,7 @@ import React, { useState } from 'react'
   const [ item, addItem ] = useState ({ id: 0, name: "", age: 0 });
 
     const updateitem = ( e ) => {
-    addItem((prev) => ({
+    addItem(( prev ) => ({
     ... prev,
     [e.target.name] : e.target.value
     }))
@@ -30,7 +29,7 @@ import React, { useState } from 'react'
     const deleteItem = ( index ) => {
       let info = [ ... information ]
       info.splice( index, 1 )
-      setInformation(info)
+      setInformation( info )
     }
 
     return (
@@ -41,6 +40,7 @@ import React, { useState } from 'react'
         <input type = "text" value = { item.age }  name = "age" onChange = { updateitem }  placeholder = 'Age'/>
         <input type = "button" onClick = { addInformation } value = "Add"/>
        </div>
+       <br />
         <table>
           <thead>
           <tr>
@@ -68,7 +68,7 @@ import React, { useState } from 'react'
           </tbody>
         </table>
         </>
-    );
+    )
   }
     
   export default Table;
