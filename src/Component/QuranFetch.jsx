@@ -54,11 +54,11 @@ function QuranFetch() {
       <option value = "ar"> عربي </option>
       </select>
       <ul>
-        { Surah.map(( item , index ) => {
+        { Surah.map((item , index) => {
             return (
-              <button key = { index } 
-              onClick = { () => ayatClick( index + 1 )}>
-                { (lang == "ar") ?  item.name : item.englishName }
+              <button key = {index} 
+              onClick = { () => ayatClick(index+1)}>
+                {(lang == "ar") ? item.name : item.englishName}
               </button>)
           } ) 
         }
@@ -70,7 +70,7 @@ function QuranFetch() {
         return (
         <div 
         key = { i } className = 'ayat-text'>  
-        <button className='play-btn' onClick = { () => audioClick( selected, i )} >▶️</button>
+        <button className = 'play-btn' onClick = { () => audioClick( selected, i )} >▶️</button>
         ({ aya.numberInSurah }) - { aya.text } 
         </div>)
       })}
