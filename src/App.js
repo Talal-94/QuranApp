@@ -33,9 +33,7 @@ function App ()
     <h1>Data fetching</h1>
     <DataFetching />
     <br/> */}
-    <br/>
-    <br/> 
-    <h1 className = 'quran-header'>Quran App</h1>
+
   <QuranFetch />
     </>
   )

@@ -46,31 +46,35 @@ table {
 
 
 .quran-header {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   color: #282c34;
   font-weight: 900;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.3px;
 }
 
 .container {
-  margin: 3rem;
-  padding: 2rem;
+  margin: 1rem;
+  padding: 1rem;
   background: rgba(10, 10, 10, .1);
   border-radius: 10px;
 }
 
 select {
-  padding: .2rem .8rem;
+  padding: .6rem .6rem;
   border-radius: 5px;
   border: none;
   /* -webkit-appearance: none; */
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 2px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   /* text-transform: uppercase; */
+}
+
+select:hover {
+  background: rgba(10, 200, 10, .9);
+  color: black;
 }
 
 label {
@@ -80,21 +84,22 @@ label {
 
 ul button {
   margin: .3rem .4rem;
-  padding: .3rem;
+  padding: 1rem;
   width: 170px;
   border-radius: 5px;
   border: none;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  background: rgba(10, 200, 10, .4);
+  background: rgba(0,0,0, .7);
+  color: white;
   text-transform: uppercase;
 }
 
 ul button:hover {
   /* background: rgba(10, 200, 10, .7); */
-  background: rgb(0, 0, 0);
-  color: white;
+  background: rgba(10, 200, 10, .9);
+  color: black;
 }
 
 .ayat-text {
@@ -103,8 +108,8 @@ ul button:hover {
   font-size: 2rem;
   text-align: right;
   display: flex;
-  flex-direction: row-reverse;
-  background: rgba(10, 200, 10, .1);
+  flex-direction: row;
+  background: rgba(10, 200, 10, .3);
   border-radius: 10px;
   /* max-width: 80%; */
 }
