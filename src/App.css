@@ -56,6 +56,9 @@ table {
   margin: 1rem;
   padding: 1rem;
   background: rgba(10, 10, 10, .1);
+  /* background-image: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
   border-radius: 10px;
 }
 
