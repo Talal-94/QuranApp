@@ -47,7 +47,7 @@ table {
 
 .quran-header {
   font-size: 2.7rem;
-  color: #282c34;
+  color: white;
   font-weight: 900;
   letter-spacing: 1.3px;
 }
@@ -55,10 +55,11 @@ table {
 .container {
   margin: 1rem;
   padding: 1rem;
-  background: rgba(10, 10, 10, .1);
+  background: rgba(0, 0, 0, 1);
   /* background-image: url(./bg.jpg);
   background-repeat: no-repeat;
   background-size: cover; */
+  color: white;
   border-radius: 10px;
 }
 
@@ -70,7 +71,7 @@ select {
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(210,210,210, .3);
   color: white;
   /* text-transform: uppercase; */
 }
@@ -94,7 +95,7 @@ ul button {
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  background: rgba(0,0,0, .7);
+  background: rgba(210,210,210, .3);
   color: white;
   text-transform: uppercase;
 }
