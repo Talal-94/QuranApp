@@ -4,11 +4,12 @@ import '../App.css'
 
 function QuranFetch() {
   const [ Surah, setSurah ] = useState([])
-  const [ selected, setSelected ] = useState(0);
-  // const [ isPlaying, setIsPlaying ] = useState(false);
+  const [ selected, setSelected ] = useState(0)
+  const [ isPlaying, setIsPlaying ] = useState(false)
   const [ Aya, setAya ] = useState([])
   const [ AudioFile, setAudioFile ] = useState({})
   const [ lang, setLang ] = useState("en")
+  let audio = new Audio()
 
   useEffect(() => {
     axios.get ("http://api.alquran.cloud/v1/surah")
@@ -29,32 +30,19 @@ function QuranFetch() {
     .then( res => res.json() )
     .then( data => {
       let Ayat = data.data.ayahs
-      setAya(Ayat);
+      setAya(Ayat)
+      document.querySelector('.ayat-text').scrollIntoView({behavior: 'smooth'})
     })
   }
   
   const audioClick = ( item, index ) => {
-  let audio = new Audio(AudioFile.surahs[ item - 1 ].ayahs[ index ].audio)
+    audio.src = (AudioFile.surahs[ item - 1 ].ayahs[ index ].audio)
+  if (isPlaying) {
+    audio.pause()
+    setIsPlaying(false)
+  }
   audio.play()
-
-  // audio.onplay = function() {
-  //   isPlaying = true;
-  // };
-  // audio.onpause = function() {
-  //   isPlaying = false;
-  // }  
-
-  // if (isPlaying == false) {
-  //   audio.play()
-  //   isPlaying = true}
-  //   else {
-  //     audio.pause()
-  //     isPlaying = false
-  //   }
-
-  // setIsPlaying()
-  // isPlaying ? audio.pause() : audio.play()
-
+  setIsPlaying(true)
   }
 
   return (
@@ -69,19 +57,20 @@ function QuranFetch() {
         { Surah.map(( item , index ) => {
             return (
               <button key = { index } 
-              onClick = { () => ayatClick( index + 1 ) }>
+              onClick = { () => ayatClick( index + 1 )}>
                 { (lang == "ar") ?  item.name : item.englishName }
               </button>)
           } ) 
         }
       </ul>
       <br/>
+
       <div>
       { Aya.map(( aya, i ) => {
         return (
         <div 
-        key = { i } className = 'ayat-text' 
-        onClick = { () => audioClick( selected, i )}>  
+        key = { i } className = 'ayat-text'>  
+        <button className='play-btn' onClick = { () => audioClick( selected, i )} >▶️</button>
         ({ aya.numberInSurah }) - { aya.text } 
         </div>)
       })}
