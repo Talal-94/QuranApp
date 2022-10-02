@@ -1,4 +1,5 @@
 import React from 'react'
+import {Fragment} from 'react'
 import './App.css'
 import Counter from './Component/Counter'
 import Table from './Component/Table'
@@ -7,7 +8,7 @@ import QuranFetch from './Component/QuranFetch'
 function App () 
 {
   return (
-    <>
+    <Fragment>
     {/* COUNTER
     <h1>Counters</h1>
     <Counter/>
@@ -35,7 +36,7 @@ function App ()
     <br/> */}
 
   <QuranFetch />
-    </>
+    </Fragment>
   )
 }
 
