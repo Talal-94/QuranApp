@@ -21,7 +21,7 @@ table {
 .container {
   padding: 1rem;
   /* background-image: url(./bg2.jpg); */
-  background: rgb(20, 20, 20);
+  background: rgb(0, 30, 30);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

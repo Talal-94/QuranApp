@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react'
 import '../App.css'
 
 function QuranFetch() {
+  const [ lang, setLang ] = useState("en")
   const [ Surah, setSurah ] = useState( [] )
   const [ selected, setSelected ] = useState(0)
-  const [ isPlaying, setIsPlaying ] = useState(false)
   const [ Aya, setAya ] = useState( [] )
   const [ AudioFile, setAudioFile ] = useState( {} )
-  const [ lang, setLang ] = useState("en")
+  const [ isPlaying, setIsPlaying ] = useState(false)
   let audio = new Audio()
 
   useEffect(() => {
@@ -37,19 +37,19 @@ function QuranFetch() {
   
   const audioClick = ( item, index ) => {
     audio.src = (AudioFile.surahs[item - 1].ayahs[index].audio)
-  if (isPlaying) {
-    audio.pause()
-    setIsPlaying(false)
-  }
-  audio.play()
-  setIsPlaying(true)
+    if (isPlaying) {
+      audio.pause()
+      setIsPlaying(false)
+    }
+    audio.play()
+    setIsPlaying(true)
   }
 
   return (
     <div className = 'container' >
-      <h1 className = 'quran-header'>Quran App</h1>
+      <h1 className = 'quran-header'>Quran App | القرآن الكريم</h1>
       <label htmlFor = "text"> Choose a language: </label>
-      <select name = "Language" value = {lang} onChange = {(e)=> setLang(e.target.value)}>
+      <select name = "Language" value = {lang} onChange = {(e) => setLang(e.target.value)}>
         <option value = "en"> English </option>
         <option value = "ar"> عربي </option>
       </select>
@@ -62,9 +62,7 @@ function QuranFetch() {
               </button>)
           })}
       </ul>
-
       <br/>
-
       <div>
       { Aya.map((aya, i) => {
         return (
