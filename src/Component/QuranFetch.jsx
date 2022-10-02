@@ -36,7 +36,7 @@ function QuranFetch() {
   }
   
   const audioClick = ( item, index ) => {
-    audio.src = (AudioFile.surahs[ item - 1 ].ayahs[ index ].audio)
+    audio.src = (AudioFile.surahs[item - 1].ayahs[index].audio)
   if (isPlaying) {
     audio.pause()
     setIsPlaying(false)
@@ -57,7 +57,7 @@ function QuranFetch() {
         {Surah.map((item, index) => {
             return (
               <button key = {index} 
-              onClick = { () => ayatClick( index + 1 )}>
+              onClick = { () => ayatClick(index + 1)}>
                 {(lang == "ar") ? item.name : item.englishName}
               </button>)
           })}
@@ -66,11 +66,11 @@ function QuranFetch() {
       <br/>
 
       <div>
-      { Aya.map(( aya, i ) => {
+      { Aya.map((aya, i) => {
         return (
         <div 
         key = {i} className = 'ayat-text'>  
-        <button className = 'play-btn' onClick = {()=> audioClick( selected, i )}> ▶️ </button>
+        <button className = 'play-btn' onClick = {()=> audioClick(selected, i)}> ▶ </button>
         ({ aya.numberInSurah }) - {aya.text} 
         </div>)
       })}
