@@ -1,5 +1,4 @@
-import React from 'react'
-import {Fragment} from 'react'
+import React, {Fragment} from 'react'
 import './App.css'
 import Counter from './Component/Counter'
 import Table from './Component/Table'
