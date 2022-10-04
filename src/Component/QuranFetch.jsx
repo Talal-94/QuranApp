@@ -76,8 +76,7 @@ function QuranFetch() {
         {Aya.length <= 0 && <div> No Sura Selected </div>}
         { Aya.map((aya, i) => {
           return (
-          <div 
-          key = {i} className = 'ayat-text'>  
+          <div key = {i} className = 'ayat-text'>  
           <button className = 'play-btn' onClick = {()=> playClick(selected, i)}> ▶ </button>
           <button className = 'play-btn play-btn2' onClick = {()=> pauseClick()}> ⏸ </button>
           ({ aya.numberInSurah }) - {aya.text} 
