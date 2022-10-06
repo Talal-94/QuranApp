@@ -100,8 +100,8 @@ ul button:hover {
   background: rgba(210,210,210, .3);
   color: white;
 }
-.play-btn2 {
-  margin-right: 1.2rem;
+.play-btn1 {
+  margin-left: 1.2rem;
 }
 .play-btn:hover {
   background: rgba(210,210,210, .7);

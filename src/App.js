@@ -4,6 +4,7 @@ import Counter from './Component/Counter'
 import Table from './Component/Table'
 import DataFetching from './Component/DataFetching'
 import QuranFetch from './Component/QuranFetch'
+
 function App () 
 {
   return (
@@ -35,7 +36,8 @@ function App ()
     <br/> */}
 
   <QuranFetch />
-    </Fragment>
+
+  </Fragment>
   )
 }
 

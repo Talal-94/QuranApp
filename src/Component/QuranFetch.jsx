@@ -12,60 +12,53 @@ function QuranFetch() {
   const scrollRef = useRef();
   let audio = new Audio()
 
+  useEffect(() => {
+    (scrollRef.current) && scrollRef.current.scrollIntoView({behavior: 'smooth'})}, [Aya])
 
   useEffect(() => {
-
-    (scrollRef.current) && scrollRef.current.scrollIntoView({behavior: 'smooth'})},
-     [Aya])
-
-  useEffect(() => {
-
     axios.get ("http://api.alquran.cloud/v1/surah")
       .then((res) => {
-      setSurah(res.data.data);
+      setSurah(res.data.data)
     })
 
     fetch(`http://api.alquran.cloud/v1/quran/ar.alafasy`)
       .then(res => res.json() )
       .then(data => {
-      setAudioFile(data.data);
-    })
-  }, [])
+      setAudioFile(data.data)
+    }) }, [])
 
-  const ayatClick = (index) => {
+  const ayatClick = ( index ) => {
     setSelected(index);
     fetch(`http://api.alquran.cloud/v1/surah/${index}`)
     .then( res => res.json() )
     .then( data => {
       let Ayat = data.data.ayahs
-      setAya(Ayat)    
-    })
-  }
+      setAya(Ayat)}) }
 
-  const playClick = (item, index) => {
+  const playClick = ( item, index ) => {
     audio.src = (AudioFile.surahs[item - 1].ayahs[index].audio)
-    if (isPlaying) {
+    if ( isPlaying ) {
       audio.pause()
-      setIsPlaying(false)
+      setIsPlaying( false )
     }
     audio.play()
-    setIsPlaying(true)
+    setIsPlaying( true )
   }
 
-  const pauseClick = () => {(isPlaying) && audio.pause()}
+  const pauseClick = () => {( isPlaying ) && audio.pause()}
 
   return (
     <div className = 'container' >
-      <h1 className = 'quran-header'> Quran App | القرآن الكريم </h1>
-      <label htmlFor = "text"> Choose a language: </label>
-      <select name = "Language" value = {lang} onChange = {(e) => setLang(e.target.value)}>
+      <h1 className = 'quran-header'> Quran | القرآن الكريم </h1>
+      <label htmlFor = "text"> Choose a language:  </label>
+      <select name = "Language" value = { lang } onChange = {( e ) => setLang(e.target.value)}>
         <option value = "en"> English </option>
         <option value = "ar"> عربي </option>
       </select>
       <ul>
         {Surah.map((item, index) => {
             return (
-              <button key = {index} 
+              <button key = { index } 
               onClick = { () => ayatClick(index + 1)}>
                 {(lang === "ar") ? item.name : item.englishName}
               </button>)
@@ -73,13 +66,13 @@ function QuranFetch() {
       </ul>
       <br/>
       <div ref = {scrollRef} className = 'aya-scroll'>
-        {Aya.length <= 0 && <div> No Sura Selected </div>}
+        {Aya.length <= 0 && <h1> No Sura Selected </h1>}
         { Aya.map((aya, i) => {
           return (
           <div key = {i} className = 'ayat-text'>  
-          <button className = 'play-btn' onClick = {()=> playClick(selected, i)}> ▶ </button>
-          <button className = 'play-btn play-btn2' onClick = {()=> pauseClick()}> ⏸ </button>
-          ({ aya.numberInSurah }) - {aya.text} 
+            ({ aya.numberInSurah }) - {aya.text} 
+            <button className = 'play-btn play-btn1' onClick = {()=> playClick(selected, i)}> ▶️ </button>
+            <button className = 'play-btn' onClick = {()=> pauseClick()}> ⏸ </button>
           </div>)
         })}
       </div>
