@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import '../App.css'
 
 function QuranFetch() {
-  const [ lang, setLang ] = useState("en")
+  const [ lang, setLang ] = useState("ar")
   const [ Surah, setSurah ] = useState( [] )
   const [ selected, setSelected ] = useState(0)
   const [ Aya, setAya ] = useState( [] )
@@ -50,30 +50,34 @@ function QuranFetch() {
   return (
     <div className = 'container' >
       <h1 className = 'quran-header'> Quran | القرآن الكريم </h1>
-      <label htmlFor = "text"> Choose a language:  </label>
+      <label htmlFor = "text"> Choose a language: </label>
       <select name = "Language" value = { lang } onChange = {( e ) => setLang(e.target.value)}>
         <option value = "en"> English </option>
         <option value = "ar"> عربي </option>
       </select>
       <ul>
-        {Surah.map((item, index) => {
+        {Surah.map(( surah, i ) => {
             return (
-              <button key = { index } 
-              onClick = { () => ayatClick(index + 1)}>
-                {(lang === "ar") ? item.name : item.englishName}
+              
+              <button key = { i } 
+              onClick = { () => ayatClick(i + 1)}>
+                { ( lang === "ar" ) ? surah.name : surah.englishName }
               </button>)
           })} 
+
       </ul>
       <br/>
-      <div ref = {scrollRef} className = 'aya-scroll'>
-        {Aya.length <= 0 && <h1> No Sura Selected </h1>}
-        { Aya.map((aya, i) => {
+      <div ref = { scrollRef } className = 'aya-scroll'>
+        {Aya.length <= 0 && <h1> No Sura Selected | Pick Sura </h1>}
+        { Aya.map(( aya, i ) => {
           return (
-          <div key = {i} className = 'ayat-text'>  
-            ({ aya.numberInSurah }) - {aya.text} 
-            <button className = 'play-btn play-btn1' onClick = {()=> playClick(selected, i)}> ▶️ </button>
-            <button className = 'play-btn' onClick = {()=> pauseClick()}> ⏸ </button>
+
+          <div key = { i } className = 'ayat-text'>  
+            <button className = 'play-btn' onClick = {()=> playClick(selected, i)}> ▶️ </button>
+            <button className = 'play-btn play-btn2' onClick = {()=> pauseClick()}> ⏸ </button>
+            { aya.text } 
           </div>)
+
         })}
       </div>
     </div>
