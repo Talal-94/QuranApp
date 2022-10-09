@@ -1,14 +1,16 @@
 import axios from 'axios'
 import React, { useState, useEffect, useRef } from 'react'
 import '../App.css'
+// import Pages from './Pages'
 
 function QuranFetch() {
-  const [ lang, setLang ] = useState("ar")
+
+  const [ lang, setLang ] = useState( "ar" )
   const [ Surah, setSurah ] = useState( [] )
-  const [ selected, setSelected ] = useState(0)
+  const [ selected, setSelected ] = useState( 0 )
   const [ Aya, setAya ] = useState( [] )
   const [ AudioFile, setAudioFile ] = useState( {} )
-  const [ isPlaying, setIsPlaying ] = useState(true)
+  const [ isPlaying, setIsPlaying ] = useState( true )
   const scrollRef = useRef();
   let audio = new Audio()
 
@@ -32,8 +34,9 @@ function QuranFetch() {
     fetch(`http://api.alquran.cloud/v1/surah/${index}`)
     .then( res => res.json() )
     .then( data => {
-      let Ayat = data.data.ayahs
-      setAya(Ayat)}) }
+    let Ayat = data.data.ayahs
+    setAya(Ayat)}) 
+  }
 
   const playClick = ( item, index ) => {
     audio.src = (AudioFile.surahs[item - 1].ayahs[index].audio)
@@ -77,9 +80,9 @@ function QuranFetch() {
             <button className = 'play-btn play-btn2' onClick = {()=> pauseClick()}> ⏸ </button>
             { aya.text } 
           </div>)
-
         })}
       </div>
+
     </div>
   )
 }

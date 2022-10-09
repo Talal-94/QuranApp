@@ -1,14 +1,15 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import './App.css'
 import Counter from './Component/Counter'
 import Table from './Component/Table'
 import DataFetching from './Component/DataFetching'
 import QuranFetch from './Component/QuranFetch'
+import Pages from './Component/Pages'
 
 function App () 
 {
   return (
-    <Fragment>
+    <>
     {/* COUNTER
     <h1>Counters</h1>
     <Counter/>
@@ -34,10 +35,9 @@ function App ()
     <h1>Data fetching</h1>
     <DataFetching />
     <br/> */}
-
-  <QuranFetch />
-
-  </Fragment>
+  {/* <QuranFetch /> */}
+  <Pages />
+  </>
   )
 }
 
