@@ -7,23 +7,23 @@ function Pages() {
   const url =`https://quran-images-api.herokuapp.com/show/page/${num}`
 
   const checkPage = (number) => {
-    if(number > 604)
+    if (number > 604)
       {return 1}
 
-    if(number < 1)
+    else if (number < 1)
       { return 604 }
     return number
   }
 
   const nextPage = () => {
-    setNumber(( num ) =>{
+    setNumber(( num ) => {
       let newPage = num + 1
       return checkPage( newPage )
     })
   }
 
   const prevPage = () => {
-    setNumber((num) => {
+    setNumber(( num ) => {
       let newPage = num - 1;
       return checkPage(newPage);
     })

@@ -35,8 +35,8 @@ function App ()
     <h1>Data fetching</h1>
     <DataFetching />
     <br/> */}
-  {/* <QuranFetch /> */}
-  <Pages />
+  <QuranFetch />
+  {/* <Pages /> */}
   </>
   )
 }

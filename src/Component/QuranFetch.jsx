@@ -1,7 +1,7 @@
 import axios from 'axios'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef} from 'react'
 import '../App.css'
-// import Pages from './Pages'
+import Pages from './Pages'
 
 function QuranFetch() {
 
@@ -30,7 +30,7 @@ function QuranFetch() {
     }) }, [])
 
   const ayatClick = ( index ) => {
-    setSelected(index);
+    setSelected(index)
     fetch(`http://api.alquran.cloud/v1/surah/${index}`)
     .then( res => res.json() )
     .then( data => {
