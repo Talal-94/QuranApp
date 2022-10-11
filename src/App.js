@@ -25,7 +25,7 @@ function App ()
     TABLE
     <br/>
     <br/>
-    <hr/>
+    <hr/> 
     <h1>Editable Table</h1>
     <Table />
     DATA FETCHING (useEffect)
@@ -35,7 +35,7 @@ function App ()
     <h1>Data fetching</h1>
     <DataFetching />
     <br/> */}
-  {/* <QuranFetch /> */}
+  <QuranFetch />
   <Pages />
   </>
   )

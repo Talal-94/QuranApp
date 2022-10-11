@@ -25,7 +25,7 @@ function Pages() {
   const prevPage = () => {
     setNumber(( num ) => {
       let newPage = num - 1;
-      return checkPage(newPage);
+      return checkPage(newPage)
     })
   }
 
@@ -33,7 +33,7 @@ function Pages() {
     <div className = 'pages-container'>
 
       <div className = "img">
-        <img src = { url }></img>
+        <img src = { url }/>
       </div>
    
       <div className='btns'>
