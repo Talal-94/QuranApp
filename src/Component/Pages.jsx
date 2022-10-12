@@ -8,7 +8,7 @@ function Pages() {
 
   const checkPage = (number) => {
     if (number > 604)
-      {return 1}
+      { return 1 }
 
     else if (number < 1)
       { return 604 }
@@ -36,7 +36,7 @@ function Pages() {
         <img src = { url }/>
       </div>
    
-      <div className='btns'>
+      <div className = 'btns'>
         <button onClick = { prevPage } className = 'left-arrow'> ← </button>
         { num } 
         <button onClick = { nextPage } className = 'right-arrow' > → </button> 
